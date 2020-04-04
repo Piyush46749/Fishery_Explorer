@@ -1,19 +1,112 @@
-<h1>
-	This is the sign up form
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<div id="form-wrapper" style="max-width:500px;margin:auto">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<form action="/register" method="POST">
-	<input type="text" name= username placeholder="username" required>
-	<br>
-	<br>
-	<input type="password" name=password placeholder="password" required>
-	<br>
-	<br>
-	<button>
-		Submit
-	</button>
+<style>
+body {
+  font-family: Times New Roman, Times, serif;;
+  background-color: black;
+}
+form {border: 1px solid #F2F3F4 ;width:400px; align:center}
+body {
+  background-image: url('fish.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding: 18px;
+  
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  background: #F2F3F4;
+  padding: 18px;
+  margin: 7px 0 20px 0;
+  display: inline-block;
+  border: none;
+  
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #F2F3F4;
+  outline: none;
+}
+a {
+  color: #0000FF;
+}
+
+
+.Signin {
+  background-color: #F2F3F4;
+  text-align: center;
+}
+
+hr {
+  border: 1px solid #F2F3F4;
+  margin-bottom: 22px;
+}
+
+
+.registerbutton {
+  background-color: #0000FF;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbutton:hover {
+  opacity: 0.5;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<form action="">
+  <div class="container">
+    <h2>Register Page</h2>
+    <p>Fill in the form to create an account.</p>
+    <hr>
+	<label for="email"><b>Email</b></label>
+    <input type="text" name="email" placeholder="abc@gmail.com"  required>
+
+    
+	<label for="psw"><b>Password</b></label>
+    <input type="password" name="psw" placeholder="Enter Password" required>
+
+    
+	<label for="password_repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="password_repeat" required>
+    
+    
+
+    <button type="submit" class="registerbutton">Register</button>
+  </div>
+  
+  <div class="container Signin">
+    
+	
+	<p>Already have an account? <a href="TI_login.html">Sign in</a>.</p>
+  </div>
 </form>
 
-<br>
-<br>
-<a href="/login">Click to login</a>
+</body>
+</html>
+</div>
