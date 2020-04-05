@@ -2,6 +2,9 @@ var express = require("express");
 var app = express();
 
 //-------------------------------------------------------------------------------------------------------------------
+app.use(express.static("public")); //used to export or use static files from public folder
+
+//-------------------------------------------------------------------------------------------------------------------
 
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/authentication", {useNewUrlParser: true})
