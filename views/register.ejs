@@ -79,22 +79,22 @@ hr {
 </head>
 <body>
 
-<form action="">
+<form action="/register" method="POST">
   <div class="container">
     <h2>Register Page</h2>
-    <p>Fill in the form to create an account.</p>
+    <p>Fill in the form to create an account!</p>
     <hr>
 	<label for="email"><b>Email</b></label>
-    <input type="text" name="email" placeholder="abc@gmail.com"  required>
+    <input type="text" name="username" placeholder="abc@gmail.com"  required>
 
     
 	<label for="psw"><b>Password</b></label>
-    <input type="password" name="psw" placeholder="Enter Password" required>
+    <input type="password" name="password" placeholder="Enter Password" required>
 
     
-	<label for="password_repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="password_repeat" required>
-    
+<!-- 	<label for="password_repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="password" required>
+     -->
     
 
     <button type="submit" class="registerbutton">Register</button>
@@ -103,7 +103,7 @@ hr {
   <div class="container Signin">
     
 	
-	<p>Already have an account? <a href="TI_login.html">Sign in</a>.</p>
+	<p>Already have an account? <a href="/login">Sign in</a>.</p>
   </div>
 </form>
 
