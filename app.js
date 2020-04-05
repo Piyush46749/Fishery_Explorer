@@ -44,11 +44,13 @@ passport.use(new LocalStrategy(User.authenticate())); //this is used to create L
 passport.serializeUser(User.serializeUser()) //takes the data from the session by reading the session and then encrypting it; we are telling the passport to use the serializer that is already defined on the User with the help of "User.serializeUser"
 passport.deserializeUser(User.deserializeUser()) //takes the data from the session by reading the session and then decrypting it
 
+// -------------------------------------------------------------------Mongoose Connector----------------------------------------------------------------------------------
+
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/Fishery_explorer", {useNewUrlParser: true})
+var Announcement = require("./models/announcement")
 
 // -------------------------------------------------------------------ROUTES----------------------------------------------------------------------------------
-
-
-
 // creating a route for the home page
 app.get("/", function(req, res){
 	res.render("home.ejs")
@@ -56,8 +58,28 @@ app.get("/", function(req, res){
 
 
 //creating the route for the logged in page: this page only opens when the user is logged in
-app.get("/user", isLoggedIn, function(req, res){
-	res.render("user.ejs")
+app.get("/user", isLoggedIn, async function(req, res){
+	var updates = await Announcement.find().sort({fishing_date:-1});
+	res.render("user.ejs",{data:updates})
+});
+
+app.post("/addfishingdetails", function(req,res){
+    console.log(req.body);
+
+	var sendData = new Announcement({
+        fishing_date : req.body.fishing_date,
+        fishing_time : req.body.fishing_time,
+        place : req.body.place,
+        species : req.body.species,
+        weight : req.body.weight,
+        target_specie : req.body.target_specie
+	});
+    sendData.save();
+    res.redirect("/user");
+});
+
+app.get("/update",isLoggedIn, (req, res) => {
+    res.render("update.ejs");
 });
 
 
@@ -118,9 +140,6 @@ function isLoggedIn(req, res, next){
 	}
 	res.redirect("/login")
 }
-
-
-
 
 //used to listen the express call
 app.listen(3000, function(){

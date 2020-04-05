@@ -1,7 +1,82 @@
-<h1>
-	Log in success!
-</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fishery Explorer</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 
-<br>
-<br>
-<a href="/logout">Click to logout</a>
+        <style>
+        body {
+  			background-image: url('/images/fishedit.jpg');
+    		background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: 100% 100%;
+		}
+        </style>
+    </head>
+    <body>
+
+	    <nav class="navbar navbar-default">
+	        <div class="container-fluid">
+	          <div class="navbar-header">
+	          <a class="navbar-brand" href="/">Fishery Explorer</a>
+	          </div>
+	          <div class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav navbar-right">
+	              <li><a href="/update">Post an update</a></li>
+	              <li><a href="/user">Notifications</a></li>
+	              <li><a href="/logout">Logout</a></li>
+	        </div>
+	     </nav>
+
+		<div class="container">
+		  <h1 align="center">Fishing History</h1>
+			<form class="form-horizontal">
+			    <% data.forEach(function(each){ %>
+				    <div class="form-group">
+				      <label class="control-label col-sm-2">Update ID:</label>
+				      <div class="col-sm-10">
+				        <input color="blue" type="text" value= "<%= each._id %>" class="form-control" id="updateId" name="explorerId" readonly>
+				      </div>
+				    </div> 
+				    <div class="form-group">
+				      <label class="control-label col-sm-2">Date of Catch:</label>
+				      <div class="col-sm-10">          
+				        <input type="text" value= "<%= each.fishing_date %>" class="form-control" id="dateofCatch" name="dateOfCatch" readonly>
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-2">Time:</label>
+				      <div class="col-sm-10">          
+				        <input type="text" value= "<%= each.fishing_time %>" class="form-control" id="time" name="time" readonly>
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-2">Location:</label>
+				      <div class="col-sm-10">          
+				        <input type="text" value= "<%= each.place %>" class="form-control" id="location" name="location" readonly>
+				      </div>
+				    </div>
+				    	<div class="form-group">
+				      		<label class="control-label col-sm-2">Specie:</label>
+				      		<div class="col-sm-10">          
+				        		<input type="text" value= "<%= each.species %>" class="form-control" id="specie" name="specie" readonly>
+				      		</div>
+				    	</div>
+				    	<div class="form-group">
+				      		<label class="control-label col-sm-2">Weight:</label>
+				      		<div class="col-sm-10">          
+				        		<input type="text" value= "<%= each.weight %>" class="form-control" id="weight" name="weight" readonly>
+				      		</div>
+				    	</div>
+				    	<div class="form-group">
+				      		<label class="control-label col-sm-2">Target Specie:</label>
+				      		<div class="col-sm-10">          
+				        		<input type="text" value= "<%= each.target_specie %>" class="form-control" id="target_specie" name="target_specie" readonly>
+				      		</div>
+				    	</div>
+						  <hr/>
+			    <% })%>
+			</form>
+		</div>
+    </body>
+</html>
