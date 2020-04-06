@@ -23,21 +23,21 @@
   ];
 
 
-  var chart = anychart.pie();
+  var chart_design = anychart.pie();
 	document.body.style.backgroundImage = "url('/images/fish.jpg')";
   
-  chart.title("Top 5 months with maximum fish wastage in tons ");
+  chart_design.title("Top 5 months with maximum fish wastage in tons ");
 
   
-  chart.data(dataentry);
-  chart.legend().position("right");
+  chart_design.data(dataentry);
+  chart_design.legend().position("left");
 
- chart.legend().itemsLayout("vertical");
-  chart.sort("desc");
+ chart_design.legend().itemsLayout("vertical");
+  chart_design.sort("aesc");
 
   
-  chart.container('container');
-  chart.draw();
+  chart_design.container('container');
+  chart_design.draw();
  
 
 });
