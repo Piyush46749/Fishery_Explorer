@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title> Pie Chart of most searched locations</title>
+      <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+  </head>
+  <body>
+    <div id="container" style="width: 100%; height: 400px"></div>
+    <script>
+       
+		
+		anychart.onDocumentReady(function() {
+
+
+  var dataentry = [
+      {x: "March", value: 25},
+      {x: "May", value: 16},
+      {x: "December", value: 10},
+      {x: "September", value: 12},
+      {x: "October", value: 24}
+    
+  ];
+
+
+  var chart = anychart.pie();
+	document.body.style.backgroundImage = "url('/images/fish.jpg')";
+  
+  chart.title("Top 5 months with maximum fish wastage in tons ");
+
+  
+  chart.data(dataentry);
+  chart.legend().position("right");
+
+ chart.legend().itemsLayout("vertical");
+  chart.sort("desc");
+
+  
+  chart.container('container');
+  chart.draw();
+ 
+
+});
+    </script>
+  </body>
+</html>

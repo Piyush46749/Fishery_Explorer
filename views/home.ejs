@@ -1,13 +1,164 @@
-<h1>
-	This is the home page
-</h1>
+<html>
+<head>
+<title>Fishery Explorer</title>
 
-<a href="/register">Click to signup</a>
-<br>
-<br>
-<a href="/login">Click to login</a>
-<br>
-<br>
-<a href="/logout">Click to logout</a>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+	<script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>	
+<style>
+
+body, html {
+  height: 100%;
+  font-family: Arial;
+  margin: 0;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #000000;
+  color: white;
+  font-size: 15px;
+}
+.footer{
+padding: 20px;
+  text-align: center;
+  background: #000000;
+  color: white;
+  font-size: 15px;
+
+}
+
+.content {padding:20px;}
+
+.bg {
+  
+  background-image: url("/images/fish.jpg");
+
+  height: 100%;
+
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a{
+color:white
+}
+
+#corner
+
+{
+    font-size:11px;
+
+    background-color:yellow;
+
+    bottom:0px;
+
+    right:0px;
+
+    position:absolute;
+	float:right
+
+}
+
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 30%;
+  height:40%;
+  padding: 10% 10%;
+}
 
 
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 601px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2.2);
+  padding: 16px;
+  text-align: center;
+	height:400px;
+	width:400px;
+  
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,2.2);
+}
+
+
+</style>
+		
+		
+</head>
+
+<body>
+<div class="header">
+  <h1><i>Fishery Explorer</i></h1>
+  <p><i>A web based application that helps you know where to fish, to fish better!</i></p>
+  
+  <div id="container">
+
+    
+	<a href="/login" >Login</a>
+
+    <span id="corner"></span>
+
+</div>
+
+</div>
+<div class="bg">
+<div class="row">
+  <div class="column">
+    <div class="card">
+		 <img src="/images/stat.png" alt="Avatar" style="width:100%;height:90%">
+      <h3 style="text-align:center;color:white">STATISTIC ANALYSIS OF YOUR CATCH 	<a href="/piechart" >Click here</a> </h3>
+      
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+	<img src="/images/bell.png" alt="Avatar" style="width:100%;">
+      <h3 style="text-align:center;color:white"><i>NOTIFIES YOUR FELLOW FISHERMAN</i> </h3>
+      
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+	<img src="/images/bycatch.png" alt="Avatar" style="width:100%;height:90%">
+      <h3 style="text-align:center;color:white">BYCATCH REDUCTION BY 40%</h3>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="footer">
+  <p>Posted by: Punarva Vyas</p>
+  <p>Contact information: <a href="mailto:someone@example.com">TI@fisheryexplorer.com</a>.</p>
+</footer>
+
+</body>
+</html>
