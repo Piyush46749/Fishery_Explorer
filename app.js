@@ -117,6 +117,9 @@ app.post("/register", function(req, res){
 app.get("/login", function(req, res){
 	res.render("login.ejs")	
 })
+app.get("/piechart", function(req, res){
+	res.render("piechart.ejs")	
+})
 
 
 //login route with the POST request
