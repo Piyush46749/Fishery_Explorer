@@ -7,7 +7,7 @@ app.use(express.static("public")); //used to export or use static files from pub
 //-------------------------------------------------------------------------------------------------------------------
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://52.55.61.51:27017/Fishery_explorer", {useNewUrlParser: true})
+mongoose.connect("mongodb://localhost:27017/Fishery_explorer", {useNewUrlParser: true})
 
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ passport.deserializeUser(User.deserializeUser()) //takes the data from the sessi
 // -------------------------------------------------------------------Mongoose Connector----------------------------------------------------------------------------------
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://52.55.61.51:27017/Fishery_explorer", {useNewUrlParser: true})
+mongoose.connect("mongodb://localhost:27017/Fishery_explorer", {useNewUrlParser: true})
 var Announcement = require("./models/announcement")
 
 // -------------------------------------------------------------------ROUTES----------------------------------------------------------------------------------
