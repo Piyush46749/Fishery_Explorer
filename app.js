@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.use(require("express-session")({  // these lines are also needed, if these are not used then it will throw an error, just like the session usage
-	secret: "I am very happy", //this is the secret that will be used for decryption
+	secret: "This is our technology innovation project", //this is the secret that will be used for decryption
 	resave:false,
 	saveUninitialized: false
 }))
