@@ -64,7 +64,7 @@ app.get("/user", isLoggedIn, async function(req, res){
 });
 
 app.post("/addfishingdetails", function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
 
 	var sendData = new Announcement({
         fishing_date : req.body.fishing_date,
